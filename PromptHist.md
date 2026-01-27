@@ -82,3 +82,367 @@ wait
   2. Ask me to add a minimal push script for this sub-repo.
 ”，翻译一下是什么意思
 40. ~加仓：git@github.com:ShengNW/RouterNew_CodexDev_20260127_repo.git
+41. ~聊天：这个子SnwHist信息生命体没什么内容，我当初给它的prompt是“请阅读并理解CodexDev（也就是启动你codex的目录）下所有子文件夹中AGENTS.md的内容，然后再参考$HOME/SnwHist/Interface.md为本次会话新建SnwHist信息生命体的独立仓库，
+  在./SnwHist/<子仓库名>_repo/内生成所需md与结构”，然后它的执行为```I plan to locate AGENTS files within the CodexDev subtree using shell find commands for compliance. This will inform the next steps based on discovered agents.
+
+• Explored
+  └ Search AGENTS.md in CodexDev
+
+• Ran for f in /root/code/router/router_new/CodexDev/**/AGENTS.md /root/code/router/router_new/CodexDev/AGENTS.md; do echo '###' "$f"; cat "$f"; echo; done
+  └ ### /root/code/router/router_new/CodexDev/API/AGENTS.md
+    # API 相关说明
+    … +557 lines
+    项目根目录在本目录上一层。
+
+
+• I'll check for notes.md files within each subdirectory entered to ensure instructions are followed before proceeding further.
+
+• Explored
+  └ Search notes.md in CodexDev
+
+• I'll read the notes.md files in both the API directory and the root directory for additional context.
+
+• Ran for f in /root/code/router/router_new/CodexDev/notes.md /root/code/router/router_new/CodexDev/API/notes.md; do echo '###' "$f"; cat "$f"; echo; done
+  └ ### /root/code/router/router_new/CodexDev/notes.md
+    # CodexDev Notes
+    … +153 lines
+        其他 → unknown
+
+
+• I'm retrieving the SnwHist interface definition from the specified file to understand the structure and contents needed for the info lifeform repo.
+
+• Explored
+  └ Read Interface.md
+
+• Identified $HOME/SnwHist as the root containing main markdown docs like PromptHist.md, which must be appended with user prompts; new subrepo creation under SnwHist/
+  <name>_repo/ fits rules since existing subfolder markdown files must not be edited. Next, I'll verify directory contents to confirm structure.
+
+• Explored
+  └ List SnwHist
+
+• The user prompt must be appended to PromptHist.md at SnwHist root each session, even though working inside CodexDev now. Editing markdown files in existing SnwHist
+  subfolders is forbidden, but creating new subrepos with their own markdown inside SnwHist subdirectories is allowed since they are separate repos.
+
+  Confirming index and agent file update requirements
+
+  Creating a new subrepo in SnwHist likely requires updating root index.md to register it, which then mandates updating AGENTS.md accordingly. This aligns with rules
+  that root md changes need coordinated updates, so next I'll inspect index.md and related files for proper structure and conventions.
+
+• Explored
+  └ Read index.md, AGENTS.md
+
+• The AGENTS.md index already includes the root index.md entry, so updating index.md content doesn’t strictly require changing AGENTS.md again; to comply with rules,
+  it’s safe to leave AGENTS.md unchanged if its current index mention remains accurate.
+
+  Choosing subrepo name and location
+
+  I'm deciding to name the new SnwHist subrepo "RouterNew_20260127" and create it under the current Codex run directory's ./SnwHist/ folder, ensuring it's distinct from
+  the global /SnwHist. I'll also verify .gitignore in the repo root to ensure SnwHist is ignored as required.
+
+• Ran rg -n "^SnwHist/?$|SnwHist/" /root/code/router/router_new/.gitignore
+  └ (no output)
+
+• Explored
+  └ Read .gitignore
+
+• The existing line "/CodexDev/*" in .gitignore ignores only immediate children, so it may not fully cover nested subdirectories like SnwHist/. To comply with the rule
+  to ignore SnwHist/ and its subdirs, adding a specific pattern like "/CodexDev/SnwHist/" is advisable.
+
+  Confirming ignore sufficiency and preparing structure check
+
+  The existing pattern effectively ignores SnwHist via matching its directory, but adding a specific ignore line for clarity is allowed and advisable. Next, I'll inspect
+  example markdown and structure files in the SnwHist directory to understand required content and layout.
+
+• Explored
+  └ Search find /root/SnwHist/FirstExample -maxdepth 2 -type f -print
+
+• I'm planning to review the Interface and index files to understand their structure before replicating it.
+
+• Ran for f in /root/SnwHist/FirstExample/README.md /root/SnwHist/FirstExample/Interface.md /root/SnwHist/FirstExample/index.md /root/SnwHist/FirstExample/AGENTS.md /
+  │ root/SnwHist/FirstExample/handoff.md; do echo '###' "$f"; cat "$f"; echo; done
+  └ ### /root/SnwHist/FirstExample/README.md
+    # SnwHist First Example
+    … +61 lines
+    - 将 SnwHist 主仓库更新（子模块与 `index.md`）以 PR 形式合并。
+
+
+• I'm planning to create a new subrepo under the specified path following the naming and structure guidelines from the example, including README, interface docs, agents,
+  prompt history, handoff, and initializing git with a placeholder remote. The user prompt will be appended both in the main PromptHist and the subrepo's PromptHist to
+  keep session history consistent.
+
+  Confirming local container directory location
+
+  I need to ensure the new SnwHist container directory is created within the current Codex run directory, separate from the global /root/SnwHist, and will check if it
+  already exists before proceeding.
+
+• Explored
+  └ List CodexDev
+
+• Deciding to create /root/SnwHist/PromptHist.md and append the user prompt there per Interface rules, despite starting in CodexDev; also planning a separate PromptHist
+  in the new CodexDev/SnwHist subrepo and considering updating the SnwHist root index accordingly.
+
+  Clarifying subrepo versus root index updates
+
+  Decided not to update the global /root/SnwHist/index.md since the new subrepo lives under CodexDev and the user didn't request global changes; instead, the new subrepo
+  will have its own index.md and standard files modeled on FirstExample, including adapted Interface and PromptHist with the full user prompt appended preceded by date.
+
+• Explored
+  └ Read PromptHist.md
+
+• The last prompt entry is 36, so I'll append the new user prompt as entry 37, including only the explicit user request message from the latest user input, not the prior
+  instructions or environment context.
+
+  Deciding prompt history content
+
+  I'm deciding to record only the final user prompt (the task request) as a single new PromptHist entry, excluding earlier instructions and environment context since
+  those aren't explicit prompts. This keeps the prompt history focused and consistent.
+
+• Explored
+  └ List SnwHist
+
+• I'm deciding on a clear ASCII name including the date for the new subrepo path, and outlining file contents like README and Interface to document this session's
+  router_new CodexDev tasks, plus a handoff.md describing next steps.
+
+  Finalizing new subrepo content and updates
+
+  I'm specifying detailed content for all new files including AGENTS.md with index, PromptHist.md with the final user prompt numbered and formatted, index.md, README.md,
+  Interface.md, and handoff.md covering background, tasks done, and next steps. I'll append the prompt to the global PromptHist, create the repo structure, git init it,
+  and update .gitignore to explicitly ignore the new SnwHist path while avoiding edits to other subfolders.
+
+• Ran printf '\n37. 请阅读并理解CodexDev（也就是启动你codex的目录）下所有子文件夹中AGENTS.md的内容，然后再参考$HOME/SnwHist/Interface.md为本次会话新建SnwHist信息生命体的
+  │ 独立仓库，\n  在./SnwHist/<子仓库名>_repo/内生成所需md与结构\n' >> /root/SnwHist/PromptHist.md
+  └ (no output)
+
+• Ran mkdir -p /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo
+  └ (no output)
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/README.md <<'EOF'
+  │ # SnwHist RouterNew CodexDev 2026-01-27
+  │
+  │ … +8 lines
+  └ (no output)
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/Interface.md <<'EOF'
+  │ # Interface 规则
+  │
+  │ … +11 lines
+  └ (no output)
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/AGENTS.md <<'EOF'
+  │ 仅供维护本仓库本体的 Codex 自动读取。
+  │
+  │ … +11 lines
+  └ (no output)
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/PromptHist.md <<'EOF'
+  │ 1. 请阅读并理解CodexDev（也就是启动你codex的目录）下所有子文件夹中AGENTS.md的内容，然后再参考$HOME/SnwHist/Interface.md为本次会话新建SnwHist信息生命体的独立仓库，
+  │   在./SnwHist/<子仓库名>_repo/内生成所需md与结构
+  │ … +1 lines
+  └ (no output)
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/index.md <<'EOF'
+  │ # 子目录索引
+  │
+  │ … +6 lines
+  └ (no output)
+
+• I'm creating handoff.md with date, background, target repo info, completed tasks, and pending items, noting the .gitignore update is still pending and will be added
+  later.
+
+• Ran cat > /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/handoff.md <<'EOF'
+  │ # Handoff
+  │
+  │ … +16 lines
+  └ (no output)
+
+• Ran git init
+  └ hint: Using 'master' as the name for the initial branch. This default branch name
+    hint: is subject to change. To configure the initial branch name to use in all
+    … +7 lines
+    hint:     git branch -m <name>
+    Initialized empty Git repository in /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo/.git/
+
+• Edited ../.gitignore (+1 -0)
+    22  /CodexDev/*
+    23 +/CodexDev/SnwHist/
+    24  /Codex/
+
+• Explored
+  └ Search find /root/code/router/router_new/CodexDev/SnwHist/RouterNew_CodexDev_20260127_repo -maxdepth 1 -type f -print
+
+• Planning to confirm the user prompt was recorded in the prompt history directory by checking the end of the log file.
+
+• Explored
+  └ Read PromptHist.md
+
+• I've created the SnwHist container and subrepo per AGENTS instructions, added new markdown files, updated the prompt, and appended .gitignore with the SnwHist
+  container path. The subrepo uses the "master" branch and isn't itself a git repo inside. The root /root/SnwHist/index.md was not updated; if registration there is
+  desired, next steps can be provided. I can mention the subrepo was named "RouterNew_CodexDev_20260127" but can rename if requested. I'll include file path references
+  and suggest git remote and push steps in a concise, friendly response without including large file contents or tests.
+
+  Outlining final response structure
+
+  I’m preparing a clear summary listing creation of the SnwHist container at /root/code/router/router_new/CodexDev/SnwHist, initializing the subrepo with key files
+  (README, AGENTS, Interface, PromptHist, index, handoff), recording the appended prompt at line 37 in /root/SnwHist/PromptHist.md, and updating .gitignore. I’ll include
+  next step suggestions like renaming the subrepo or setting a remote and pushing, noting that git init created the master branch. All path references will use inline
+  code for clarity.
+```，也就是说它读了AGENTS.md,但却没有像我希望的那样把从md中理解到的东西沉淀到信息生命体中，但不是说本来那些子文件夹就没什么信息，比如“root@scw-blissful-shannon:~/code/router/router_new/CodexDev/UI# cat AGENTS.md
+# Router 前端交互速查（给 Codex/同事）
+
+目的：让你不必全仓库搜索，就能理解前端交互的入口、调用链路、页面分布和后端接口对接位置。
+
+---
+
+## 1) 前端总体架构（最短理解路径）
+- **前端目录**：`web/`
+- **技术栈**：React 18 + Vite + react-router-dom v7 + semantic-ui + i18next + axios
+- **核心调用链**：`src/index.jsx` → `src/App.jsx`(路由) → `pages/*`(页面) → `components/*`(表格/表单) → `helpers/api.jsx`(axios) → 后端 `/api/*`
+- **状态来源**：`/api/status` → `localStorage` → `Header/Footer/各种页面`
+
+---
+
+## 2) 启动与构建（开发 & 线上）
+- **开发**：在 `web/` 下执行 `npm run dev`
+  - Vite 端口：`5181`（见 `web/vite.config.mjs`）
+  - 默认代理：`/api` → `http://localhost:3011`
+  - 若需要跨域指向别的后端：设置 `VITE_SERVER=http://host:port`
+- **构建**：`npm run build --prefix web`
+  - 输出目录：`web/build`
+  - 后端通过 `embed.go` + `internal/transport/http/router/web.go` 直接提供静态资源
+  - 若设置 `FRONTEND_BASE_URL`，后端会重定向到外部前端
+
+---
+
+## 3) 入口与路由（页面总览）
+- **入口**：`web/src/index.jsx`
+  - 注入 `StatusProvider` / `UserProvider`
+  - 包裹 `BrowserRouter` + `Header` + `Footer`
+  - 全局提示：`react-toastify`
+- **路由**：`web/src/App.jsx`
+  - 首页：`/` → `pages/Home`
+  - 登录/注册：`/login` / `/register`
+  - 权限页（需登录）：`/channel`、`/token`、`/redemption`、`/user`、`/log`、`/setting`、`/topup`、`/dashboard`
+  - 其它：`/about`、`/chat`、`/reset`、`/user/reset`
+
+---
+
+## 4) 状态与本地缓存（非常关键）
+- **状态加载**：`App.jsx` 启动时请求 `/api/status`
+  - 写入 `localStorage`：`system_name`、`logo`、`footer_html`、`quota_per_unit`、`display_in_currency`、`chat_link`
+  - 这些值影响：`Header`、`Footer`、配额显示、聊天入口等
+- **用户状态**：`UserContext` + `localStorage.user`
+  - `PrivateRoute` 仅检查 `localStorage.user`
+  - 登出时会清理 `user` + `wallet_token`
+
+---
+
+## 5) API 统一入口与鉴权逻辑
+- **API 实例**：`web/src/helpers/api.jsx`
+  - `baseURL` 来自 `VITE_SERVER` 或当前域
+  - 请求拦截：从 `localStorage.user` 或 `wallet_token` 填充 `Authorization`
+  - 响应拦截：`401` 时尝试 `web3` 刷新 token
+- **错误/提示**：`web/src/helpers/utils.jsx` → `showError/showSuccess/showNotice`
+
+---
+
+## 6) 认证/登录链路
+- **账号密码登录**：`LoginForm.jsx`
+  - `POST /api/user/login` → 写入 `localStorage.user` → 跳转 `/token`
+- **钱包登录**：`services/web3Auth.jsx` + `helpers/web3.jsx`
+  - 调用 `@yeying-community/web3-bs` 的 `loginWithChallenge`
+  - baseUrl：`/api/v1/public/auth`
+  - 登录成功后调用 `/api/user/self` 获取用户信息
+  - token 存在 `localStorage.wallet_token`
+- **钱包绑定**：`PersonalSetting.jsx`
+  - `POST /api/v1/public/common/auth/challenge`
+  - `POST /api/oauth/wallet/bind`
+
+---
+
+## 7) 主要页面与对应组件（去哪里改）
+
+### 首页/关于/聊天
+- 首页：`pages/Home/index.jsx`
+  - `/api/notice`（弹公告）、`/api/home_page_content`（首页内容，支持 URL/Markdown）
+- 关于：`pages/About/index.jsx`
+  - `/api/about`
+- 聊天：`pages/Chat/index.jsx`
+  - 纯 iframe，`chat_link` 来自 `/api/status`
+
+### Channel 管理（管理员）
+- 页面：`pages/Channel/index.jsx`
+  - 列表逻辑：`components/ChannelsTable.jsx`
+  - 详情编辑：`pages/Channel/EditChannel.jsx`（非常大）
+  - 相关接口：`/api/channel/*`、`/api/channel/models`、`/api/group`
+  - 类型定义：`constants/channel.constants.jsx`
+
+### Token 管理
+- 页面：`pages/Token/index.jsx`
+  - 列表逻辑：`components/TokensTable.jsx`
+  - 编辑/新增：`pages/Token/EditToken.jsx`
+  - 相关接口：`/api/token/*`、`/api/user/available_models`
+
+### Redemption 兑换码
+- 页面：`pages/Redemption/index.jsx`
+  - 列表逻辑：`components/RedemptionsTable.jsx`
+  - 编辑/新增：`pages/Redemption/EditRedemption.jsx`
+  - 相关接口：`/api/redemption/*`
+
+### 用户管理（管理员）
+- 页面：`pages/User/index.jsx`
+  - 列表逻辑：`components/UsersTable.jsx`
+  - 编辑/新增：`pages/User/EditUser.jsx`、`pages/User/AddUser.jsx`
+  - 相关接口：`/api/user/*`、`/api/user/manage`
+
+### 日志
+- 页面：`pages/Log/index.jsx`
+  - 列表/统计：`components/LogsTable.jsx`
+  - 相关接口：`/api/log/*`
+  - 管理员能筛选用户/渠道，普通用户只看 `/api/log/self`
+
+### 设置
+- 页面：`pages/Setting/index.jsx`
+  - 个人：`components/PersonalSetting.jsx`
+  - 运营：`components/OperationSetting.jsx`
+  - 系统：`components/SystemSetting.jsx`
+  - 其他：`components/OtherSetting.jsx`
+  - 统一接口：`/api/option`
+
+### 仪表盘 & 充值
+- 仪表盘：`pages/Dashboard/index.jsx`
+  - `/api/user/dashboard`
+- 充值：`pages/TopUp/index.jsx`
+  - `/api/user/topup`，`/api/user/self`
+
+---
+
+## 8) 国际化 & 文案
+- i18n 入口：`web/src/i18n.jsx`
+- 语言包：`web/src/locales/zh/translation.json`、`web/src/locales/en/translation.json`
+- Header 语言切换：`components/Header.jsx`
+
+---
+
+## 9) 和后端交互的关键点（排错必看）
+- `ITEMS_PER_PAGE` 必须和后端一致：`constants/common.constant.jsx`
+- 所有列表类接口都使用分页参数 `p`
+- `localStorage.status` 影响页面显示（logo/系统名/页脚/单位换算/聊天链接）
+- `FRONTEND_BASE_URL` 会让后端不再直接提供 `web/build`，而是重定向
+
+---
+
+## 10) 可能“看似存在但未接入”的前端
+- `components/GitHubOAuth.jsx` / `components/LarkOAuth.jsx` 有逻辑但路由未接入
+- `pages/Wallet/index.jsx` 未被 `App.jsx` 路由使用（测试工具页）
+
+---
+
+## 11) 快速定位一类“交互问题”的方法
+- **页面不显示/内容异常** → 先看 `App.jsx` 是否正常拉到 `/api/status`
+- **接口没走** → `helpers/api.jsx` 是否被正确使用？是否设置 `VITE_SERVER`？
+- **权限问题** → `localStorage.user` 是否存在？`PrivateRoute` 只看本地
+- **语言问题** → 检查 `locales` 和 `useTranslation` 的 key
+
+---
+
+如需深入修改某个页面：优先从 `pages/*` 入口找，再追到 `components/*Table` 或具体表单组件，最后才去 `helpers/api.jsx`/`helpers/utils.jsx` 看通用逻辑。”这个UI文件夹下的AGENTS.md就干货满满。我觉得不如就在“RouterNew_CodexDev_20260127_repo”下新开codex,让它自己把那些CodexDev下AGENTS.md以文件夹命名然后原封不动移动到RouterNew_CodexDev_20260127_repo下，然后在Interface.md中写明各个文件的一些摘要，需要什么信息到哪找之类的，如何？如果你也认同，就给我这个信息生命体新开codex的第一句prompt，完成迁移和摘要工作,这样你也算带徒弟了
