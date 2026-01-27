@@ -524,3 +524,4 @@ drwxrwxr-x  9 snw snw  4096  1月 28 05:08 .git
 -rw-rw-r--  1 snw snw  1767  1月 27 18:25 vision.md
 snw@snw-Inspiron-3458:~/SnwHist$”这个之前拉的仓库，落后了几十个commit,少了两个子模块，但你最后的三个命令竟然是add commit push?你想坑死我吗？还好我没执行，我是要把本地旧的更新到最新的远端
 47. 把这个本地旧仓库与远端同步的操作加到readme中，并推git
+48. git@github.com:ShengNW/pcseg_session_20260128_repo.git 你看一下，应该差不多名字
