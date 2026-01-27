@@ -6,5 +6,6 @@
 - `README.md`：使用者快速上手指引。
 - `PromptHist.md`：用户 prompt 记录（只记录用户 prompt）。
 - `mission.md`：使命与运行理解。
+- `vision.md`：使用/维护角色区分与流程（含 PlantUML）。
 - `Interface.md`：所有读取/写入智能体必须遵守的接口规则。
 - `index.md`：子目录（子模块）索引与元信息。
