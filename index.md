@@ -4,4 +4,4 @@
 
 | 子目录 | 远程仓库 | 维护者 | 用途 | 状态 |
 | --- | --- | --- | --- | --- |
-| （暂无） |  |  |  |  |
+| FirstExample | git@github.com:ShengNW/SnwHist_FirstExample.git | Codex | 2026-01-27 会话交接（README.md） | active |

@@ -1,0 +1,3 @@
+[submodule "FirstExample"]
+	path = FirstExample
+	url = git@github.com:ShengNW/SnwHist_FirstExample.git
