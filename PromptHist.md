@@ -446,3 +446,42 @@ wait
 ---
 
 如需深入修改某个页面：优先从 `pages/*` 入口找，再追到 `components/*Table` 或具体表单组件，最后才去 `helpers/api.jsx`/`helpers/utils.jsx` 看通用逻辑。”这个UI文件夹下的AGENTS.md就干货满满。我觉得不如就在“RouterNew_CodexDev_20260127_repo”下新开codex,让它自己把那些CodexDev下AGENTS.md以文件夹命名然后原封不动移动到RouterNew_CodexDev_20260127_repo下，然后在Interface.md中写明各个文件的一些摘要，需要什么信息到哪找之类的，如何？如果你也认同，就给我这个信息生命体新开codex的第一句prompt，完成迁移和摘要工作,这样你也算带徒弟了
+42. ~聊天：你这个prompt让我有点难崩啊，你作为GitHist信息生命体的老祖宗，你不知道信息生命体只能操作本目录的md,并且本目录只有md这个规则吗？我说的是把Codexdev子文件夹下面的AGENTS.md命名成“相应子文件夹名.md”然后移动到RouterNew_CodexDev_20260127_repo中，根据内容去些Interface.md，而index.md是不动的，那是留给外部接口的、子信息生命体的。另外我目前的目录树```
+root@scw-blissful-shannon:~/code/router/router_new/CodexDev# tree
+.
+├── AGENTS.md
+├── API
+│   ├── AGENTS.md
+│   ├── api-v1-mapping.md
+│   ├── notes.md
+│   └── prompt-admin-internal.md
+├── Channel
+│   ├── AGENTS.md
+│   └── Speed
+│       ├── AGENTS.md
+│       └── Qingyun.md
+├── Communicate
+│   ├── AGENTS.md
+│   └── API.md
+├── Money
+│   └── AGENTS.md
+├── PG
+│   └── AGENTS.md
+├── Router
+├── SnwHist
+│   └── RouterNew_CodexDev_20260127_repo
+│       ├── AGENTS.md
+│       ├── Interface.md
+│       ├── PromptHist.md
+│       ├── README.md
+│       ├── handoff.md
+│       └── index.md
+├── UI
+│   └── AGENTS.md
+├── Up
+│   └── AGENTS.md
+├── Wallet
+│   └── AGENTS.md
+├── notes.md
+└── ru_CoDevDir.txt
+```也给你。明白吗？RouterNew_CodexDev_20260127_repo也是跟你类似的信息生命体，我要在它下面开codex让它开始自我迭代，而自我迭代的第一步是直接拿来主义，继承CodexDev开发团队的一些资产，而你要给我让它继承这些资产的prompt。所以你打算怎么给？请开始你的表演
