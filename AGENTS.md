@@ -4,6 +4,8 @@
 
 规则：所有在项目根目录开的codex的用户prompt都必须记录在项目根目录的PromptHist.md文件中，而且这个文件只记录用户prompt。
 
+暗号：当用户 prompt 以“~聊天：”开头时，视为与信息生命体的对话，仅记录 PromptHist 并推送，其他文件不做修改；回复以教师与指挥官身份统筹、安排分析、教用户理解。
+
 索引：
 - `README.md`：使用者快速上手指引。
 - `PromptHist.md`：用户 prompt 记录（只记录用户 prompt）。
