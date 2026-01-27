@@ -12,6 +12,12 @@
   - 默认 path：`SnwHist/<name>_repo`。
   - 触发动作：`git submodule add <repo_ssh_url> <path>`，更新 `index.md` 元信息，提交分支并推送 PR。
 
+index.md 用途填写流程：
+1. 子仓库更新后先拉取到本地。
+2. 优先阅读子仓库 `Interface.md`，据此提炼用途。
+3. 若缺少 `Interface.md`，再扫描关键 md 全量总结。
+4. 保持用途描述简洁、可检索且能推断子仓库可提供的信息。
+
 索引：
 - `README.md`：使用者快速上手指引。
 - `PromptHist.md`：用户 prompt 记录（只记录用户 prompt）。

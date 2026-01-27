@@ -5,6 +5,8 @@
 ## 使用步骤
 
 1. 克隆仓库到本机（通常放在 `$HOME/` 下）。
+   - 若需要同时拉取子仓库：
+     `git clone --recurse-submodules git@github.com:ShengNW/SnwHist.git`
 2. 复制下面这段提示词到需要继承背景信息的 Codex 会话中（按实际存放目录修改）：
 
 ```
