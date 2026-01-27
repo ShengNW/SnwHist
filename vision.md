@@ -48,7 +48,7 @@ UC --> [Interface.md] : 读取规则
 UC --> [index.md] : 查找交接文件
 UC --> [子目录 A] : 进入执行
 
-MC --> [AGENTS.md] : 维护索引入口
+MC --> [AGENTS.md] : 维护入口/索引
 MC --> [Interface.md] : 维护规则
 MC --> [index.md] : 更新子目录元信息
 MC --> [子目录 A] : 更新子模块指针
