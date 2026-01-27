@@ -31,7 +31,5 @@
 
 ```
 请参考$HOME/SnwHist/Interface.md为本次会话新建SnwHist信息生命体的独立仓库，
-建好后推到git@github.com:ShengNW/SnwHist_FirstExample.git，
-并更新$HOME/SnwHist的index.md和相关git子仓库关联，
-最后以PR形式提交到git@github.com:ShengNW/SnwHist.git
+在./SnwHist/<子仓库名>_repo/内生成所需md与结构
 ```
