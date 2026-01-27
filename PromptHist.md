@@ -486,3 +486,4 @@ root@scw-blissful-shannon:~/code/router/router_new/CodexDev# tree
 └── ru_CoDevDir.txt
 ```也给你。明白吗？RouterNew_CodexDev_20260127_repo也是跟你类似的信息生命体，我要在它下面开codex让它开始自我迭代，而自我迭代的第一步是直接拿来主义，继承CodexDev开发团队的一些资产，而你要给我让它继承这些资产的prompt。所以你打算怎么给？请开始你的表演
 43. ~加仓：git@github.com:ShengNW/pcseg_session_20260128_repo.git
+44. `git@github.com:ShengNW/RouterNew_CodexDev_20260127_repo.git`更新了，SnwHist要做相应修改吗？具体修改代码是什么？这个能不能人工操作？请你帮我改好然后把步骤指导增加到readme中同步推，方便人工更新而不必每次都麻烦你，最好也有脚本，参数输入需要更新的仓库或子目录名自动更新

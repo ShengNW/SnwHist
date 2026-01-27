@@ -13,6 +13,70 @@
 对话历史存放在$HOME/SnwHist中，请阅读index.md找到与本次对话相关的交接文件
 ```
 
+# 更新子仓库（人工）
+
+1. 进入 SnwHist 根目录。
+2. 拉取子仓库最新提交并更新子模块指针：
+
+```
+git -C <子仓库路径> fetch origin
+git -C <子仓库路径> checkout main
+git -C <子仓库路径> pull --ff-only
+git add <子仓库路径>
+git commit -m "Update submodule <子仓库名>"
+git push
+```
+
+> 若子仓库默认分支不是 `main`，请改为实际分支名（如 `master`）。
+
+## 更新脚本（复制即用）
+
+将以下脚本保存为 `update_submodule.sh`，执行 `chmod +x update_submodule.sh`，然后在 SnwHist 根目录运行：
+
+```
+./update_submodule.sh <子仓库路径或名称>
+```
+
+脚本内容：
+
+```
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 <submodule_path_or_name>"
+  exit 1
+fi
+
+path="$1"
+
+if [ ! -d "$path/.git" ]; then
+  echo "Submodule not found: $path"
+  exit 1
+fi
+
+git -C "$path" fetch origin
+
+branch="$(git -C "$path" symbolic-ref --short -q refs/remotes/origin/HEAD | sed 's|^origin/||')"
+if [ -z "$branch" ]; then
+  if git -C "$path" show-ref --verify --quiet refs/remotes/origin/main; then
+    branch="main"
+  else
+    branch="master"
+  fi
+fi
+
+git -C "$path" checkout "$branch"
+git -C "$path" pull --ff-only origin "$branch"
+
+git add "$path"
+echo "Updated submodule pointer for $path. Now commit and push in SnwHist."
+
+# ignore this script in parent git repo if applicable
+if [ -f ".gitignore" ]; then
+  grep -qxF "update_submodule.sh" .gitignore || echo "update_submodule.sh" >> .gitignore
+fi
+```
 3. 在 `index.md` 中找到与本次对话相关的交接文件或子目录。
 4. 需要创建新的交接仓库时，让使用的 Codex 参考 `Interface.md`。
 
@@ -69,4 +133,3 @@ if [ -f "../.gitignore" ]; then
   grep -qxF "init_subrepo.sh" ../.gitignore || echo "init_subrepo.sh" >> ../.gitignore
 fi
 ```
-
