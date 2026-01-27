@@ -6,6 +6,12 @@
 
 暗号：当用户 prompt 以“~聊天：”开头时，视为与信息生命体的对话，仅记录 PromptHist 并推送，其他文件不做修改；回复以教师与指挥官身份统筹、安排分析、教用户理解。
 
+维护暗号：
+- `~加仓：<repo_ssh_url> [name=<子仓库名>] [path=SnwHist/<子仓库名>_repo]`
+  - 默认 name：从 repo 名推断（如 SnwHist_FirstExample）。
+  - 默认 path：`SnwHist/<name>_repo`。
+  - 触发动作：`git submodule add <repo_ssh_url> <path>`，更新 `index.md` 元信息，提交分支并推送 PR。
+
 索引：
 - `README.md`：使用者快速上手指引。
 - `PromptHist.md`：用户 prompt 记录（只记录用户 prompt）。
