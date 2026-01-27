@@ -44,3 +44,9 @@ wait
 
   - 使用 Codex 负责读取历史与生成子体内容；Git 同步由人类负责（暂不要求使用
     Codex 完成）。”还有其他一些部分都挺好的，记得也加上
+26. ~聊天：interface中'''任务追加（示例）：
+
+请参考$HOME/SnwHist/Interface.md为本次会话新建SnwHist信息生命体的独立仓库，
+建好后推到git@github.com:ShengNW/SnwHist_FirstExample.git，
+并更新$HOME/SnwHist的index.md和相关git子仓库关联，
+最后以PR形式提交到git@github.com:ShengNW/SnwHist.git'''这个是不是要改一下，不然跟上面所说的“Git 同步由人类负责”矛盾啊，改成什么比较好？
