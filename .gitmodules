@@ -1,3 +1,6 @@
 [submodule "FirstExample"]
 	path = FirstExample
 	url = git@github.com:ShengNW/SnwHist_FirstExample.git
+[submodule "RouterNew_CodexDev_20260127_repo"]
+	path = RouterNew_CodexDev_20260127_repo
+	url = git@github.com:ShengNW/RouterNew_CodexDev_20260127_repo.git
