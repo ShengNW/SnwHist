@@ -3,6 +3,7 @@
 规则：所有在项目根目录开的codex的用户prompt都必须记录在项目根目录的PromptHist.md文件中，而且这个文件只记录用户prompt。
 
 索引：
+- `README.md`：使用者快速上手指引。
 - `PromptHist.md`：用户 prompt 记录（只记录用户 prompt）。
 - `mission.md`：使命与运行理解。
 - `Interface.md`：所有读取/写入智能体必须遵守的接口规则。
