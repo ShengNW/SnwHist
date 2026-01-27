@@ -4,3 +4,6 @@
 [submodule "RouterNew_CodexDev_20260127_repo"]
 	path = RouterNew_CodexDev_20260127_repo
 	url = git@github.com:ShengNW/RouterNew_CodexDev_20260127_repo.git
+[submodule "pcseg_session_20260128_repo"]
+	path = pcseg_session_20260128_repo
+	url = git@github.com:ShengNW/pcseg_session_20260128_repo.git

@@ -485,3 +485,4 @@ root@scw-blissful-shannon:~/code/router/router_new/CodexDev# tree
 ├── notes.md
 └── ru_CoDevDir.txt
 ```也给你。明白吗？RouterNew_CodexDev_20260127_repo也是跟你类似的信息生命体，我要在它下面开codex让它开始自我迭代，而自我迭代的第一步是直接拿来主义，继承CodexDev开发团队的一些资产，而你要给我让它继承这些资产的prompt。所以你打算怎么给？请开始你的表演
+43. ~加仓：git@github.com:ShengNW/pcseg_session_20260128_repo.git
