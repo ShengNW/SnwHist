@@ -526,3 +526,4 @@ snw@snw-Inspiron-3458:~/SnwHist$”这个之前拉的仓库，落后了几十个
 47. 把这个本地旧仓库与远端同步的操作加到readme中，并推git
 48. git@github.com:ShengNW/pcseg_session_20260128_repo.git 你看一下，应该差不多名字
 49. 你再根据最新的子模块仓库内容更新一下index中的用途信息，然后推git
+50. 帮我新建docs_OC这个子模块（子文件夹），在其中新建空的codex.md，并推到“https://github.com/ShengNW/docs_OC”这个空仓库，注意ssh推
